@@ -1,0 +1,27 @@
+# To use:
+#
+#     pre-commit run -a
+#
+# Or:
+#
+#     pre-commit install  # (runs every time you commit in git)
+#
+# See https://github.com/pre-commit/pre-commit
+#
+# Only checks that leave files untouched, so the upstream Cartographer sources stay identical to
+# upstream and its fixes still merge cleanly.
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-xml
+      - id: check-yaml
+      - id: debug-statements
+      - id: check-byte-order-marker  # Forbid UTF-8 byte-order markers
