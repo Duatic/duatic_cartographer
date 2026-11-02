@@ -200,6 +200,9 @@ float min_range
 float max_range
   Not yet documented.
 
+float min_intensity
+  Rangefinder points with a lower intensity will be dropped.
+
 float min_z
   Not yet documented.
 
