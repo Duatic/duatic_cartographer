@@ -200,6 +200,11 @@ float min_range
 float max_range
   Not yet documented.
 
+float min_intensity
+  Rangefinder points with a lower intensity will be dropped, such as beams
+  reflected off glass. Points of a cloud without intensities count as
+  intensity 0, so any value above 0 drops all of them.
+
 float min_z
   Not yet documented.
 
