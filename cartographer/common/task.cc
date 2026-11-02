@@ -24,8 +24,8 @@ Task::~Task() {
   if (state_ != NEW && state_ != COMPLETED) {
     LOG(WARNING) << "Delete Task between dispatch and completion.";
   }
-  // Under NDEBUG, newer abseil skips this in ~Mutex while a libabsl built without
-  // NDEBUG still tracks lock order, so a Task at this address inherits stale edges.
+  // Newer abseil skips this in ~Mutex under NDEBUG, but a libabsl built without
+  // NDEBUG keeps tracking lock order, so a later Task here would inherit it.
   mutex_.ForgetDeadlockInfo();
 }
 
